@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex n°2 - Like/Dislike</title>
+  </head>
+  <body>
+    <button id="like">Like</button>
+    <script>
+      //on récupère le bouton
+      const bouton = document.querySelector('#like');
+      let isLiked = false; // Variable pour suivre l'état du bouton
+
+      bouton.addEventListener('click', function () {
+        if (isLiked) {
+          bouton.textContent = 'Like';
+        } else {
+          bouton.textContent = 'Dislike';
+        }
+        // Inversez l'état du bouton pour la prochaine fois
+        isLiked = !isLiked;
+      });
+    </script>
+  </body>
+</html>

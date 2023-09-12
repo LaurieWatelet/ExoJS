@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex n°5 - Minuterie</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    body > * {
+      margin-bottom: 1rem;
+    }
+  </style>
+  <body>
+    <!-- Html de la minuterie -->
+    <div><input type="number" value="60"> secondes</div>
+
+    <button id="start">Démarrer</button>
+    <button id="stop">Arrêter</button>
+
+    <div id="timer"></div>
+    <!-- -->
+
+    <script>
+      const start = document.querySelector('#start');
+      const stop = document.querySelector('#stop');
+      const timerText = document.querySelector('#timer');
+      const input = document.querySelector('input');
+      let intervalID;
+      let timeRemaining = 0;
+
+      start.addEventListener('click', () => {
+        if (timeRemaining <= 0) {
+          timeRemaining = input.value;
+          timerText.textContent = timeRemaining;
+        }
+        intervalID = setInterval(handler, 1000);
+      });
+
+      stop.addEventListener('click', () => {
+        clearInterval(intervalID);
+      });
+
+      const handler = () => {
+        if (timeRemaining <= 0) {
+          clearInterval(intervalID);
+        } else {
+          timeRemaining -= 1;
+          timerText.textContent = timeRemaining;
+        }
+      };
+    </script>
+  </body>
+</html>
+
+

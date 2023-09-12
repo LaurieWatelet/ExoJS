@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex n°3 - Compteur de clics (OK)</title>
+  </head>
+  <body>
+    <button id="clicbuton">Cliquez-ici</button>
+    <p id="compteur">0 clics</p>
+    <script>
+      const clicButton = document.getElementById('clicbuton');
+      const compteurElement = document.getElementById('compteur');
+
+      let nombreDeClics = 0;
+
+      clicButton.addEventListener('click', () => {
+        nombreDeClics++;
+        compteurElement.textContent = `${nombreDeClics} clics`;
+        // la chaine est assigné à compteurElement.textContent ce qui met à jour le texte affiché avec le nombre de clics.
+      });
+    </script>
+  </body>
+</html>

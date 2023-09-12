@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex n°4 - Changement de couleur de fond avec un sélecteur de couleur</title>
+  </head>
+  <body>
+      <input type="color" id="couleur1" value="#BD681D">
+      <button id="bouton1">Couleur de fond</button><br>
+    <script>
+      const boutton = document.querySelector('#bouton1');
+      const body = document.querySelector('body');
+
+      const input = document.querySelector('input')
+
+      boutton.addEventListener('click', function () {
+
+        const couleur =input.value;
+        console.log(couleur)
+        body.style.backgroundColor = couleur;
+      });
+    </script>
+  </body>
+</html>
+

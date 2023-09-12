@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="Fr-Be">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex n°1 - Changement de couleur du fond (OK)</title>
+  </head>
+  <body>
+    <button id="bouton">Cliquez plz !</button>
+    <script>
+      let couleur = 'red';
+
+      //on récupère le bouton et le body
+      const boutton = document.querySelector('#bouton');
+      const body = document.querySelector('body');
+
+      //console.log('boutton');
+      //on ajoute un évenement click au bouton
+      boutton.addEventListener('click', function () {
+        //Quand quelqu'un clique;
+
+        //Si la couleur est rouge => on passe au bleu
+        //sinon on passe au rouge
+        if (couleur === 'red') {
+          couleur = 'blue';
+          boutton.textContent = 'Passer au rouge';
+        } else {
+          couleur = 'red';
+          boutton.textContent = 'Passer au bleu';
+        }
+        body.style.backgroundColor = couleur;
+      });
+    </script>
+  </body>
+</html>
