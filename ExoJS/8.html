@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html lang="Fr-BE">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex n°8 - Accordéon</title>
-</head>
-<body>
-<nav class="onglets">
-    <li><a href="#">London</a></li>
-    <li><a href="#">Paris</a></li>
-    <li><a href="#">Tokyo</a></li>
-  </ul>
-</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex n°8 - Accordéon</title>
+    <style>
+      h3 {
+        background-color:#A5A5A0;
+        cursor: pointer;
+      }
 
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
 
-<script>
+  <body>
+    <div id="section1">
+      <h3 onclick="toggleSection('section1')">Section 1</h3>
+      <div class="hidden">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
 
-</script>
-</body>
+    <div id="section2">
+      <h3 onclick="toggleSection('section2')">Section 2</h3>
+      <div class="hidden">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+
+    <div id="section3">
+      <h3 onclick="toggleSection('section3')">Section 3</h3>
+      <div class="hidden">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const content = section.querySelector('.hidden');
+
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      }
+    </script>
+  </body>
 </html>
